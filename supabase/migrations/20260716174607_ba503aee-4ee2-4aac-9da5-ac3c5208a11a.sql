@@ -1,0 +1,1 @@
+REVOKE SELECT (api_key) ON public.user_api_keys FROM anon, authenticated;

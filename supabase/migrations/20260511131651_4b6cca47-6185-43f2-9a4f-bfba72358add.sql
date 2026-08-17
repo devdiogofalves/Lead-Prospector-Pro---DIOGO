@@ -1,0 +1,1 @@
+UPDATE public.dispatch_queue SET status='pending', attempts=0, last_error=NULL, scheduled_at=now() WHERE id='57bc9bff-9d7f-44e5-88f2-2bf942a27745';

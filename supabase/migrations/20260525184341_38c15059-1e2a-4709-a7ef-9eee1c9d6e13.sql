@@ -1,0 +1,1 @@
+ALTER TABLE public.instagram_contacts ADD COLUMN IF NOT EXISTS site text;

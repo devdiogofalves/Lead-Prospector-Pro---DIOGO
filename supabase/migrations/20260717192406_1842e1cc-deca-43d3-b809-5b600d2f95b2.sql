@@ -1,0 +1,1 @@
+ALTER TABLE public.qualification_conversations ADD COLUMN IF NOT EXISTS flow_step integer DEFAULT 0;

@@ -1,0 +1,1 @@
+UPDATE public.qualification_messages SET processed = false WHERE id IN ('c5ac3464-f581-4bb1-aa8c-0b4ac0c9b66d','2f55426c-2997-4f27-be1e-1d2cc7db8489');

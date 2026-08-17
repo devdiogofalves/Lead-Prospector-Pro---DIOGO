@@ -1,0 +1,1 @@
+DELETE FROM qualification_messages WHERE conversation_id IN (SELECT id FROM qualification_conversations WHERE channel IN ('telegram','instagram','linkedin','email','messenger')); DELETE FROM qualification_conversations WHERE channel IN ('telegram','instagram','linkedin','email','messenger');

@@ -1,0 +1,1 @@
+ALTER TABLE public.prospecting_profiles ADD COLUMN IF NOT EXISTS linkedin_url TEXT;

@@ -1,0 +1,1 @@
+UPDATE public.qualification_settings SET audio_ratio = 0.9, use_audio = true, opening_delay_seconds = 45 WHERE user_id = '45102d21-4107-47f7-b4e2-5911d74b1fa1';

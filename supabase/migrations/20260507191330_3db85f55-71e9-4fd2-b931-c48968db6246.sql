@@ -1,0 +1,2 @@
+UPDATE dispatch_settings SET paused=false WHERE user_id='18913027-765c-41af-8962-113d96120fbf';
+UPDATE dispatch_queue SET attempts=0, last_error=NULL, scheduled_at=now() WHERE id='443c6c67-9339-45dc-a7ea-b5535e75a045';

@@ -1,0 +1,1 @@
+ALTER TABLE public.qualification_conversations ADD COLUMN IF NOT EXISTS locked_at timestamptz;

@@ -1,0 +1,1 @@
+ALTER TABLE public.qualification_settings ADD COLUMN IF NOT EXISTS flow_mode text;

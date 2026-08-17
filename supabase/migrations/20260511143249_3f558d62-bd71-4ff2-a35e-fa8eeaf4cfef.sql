@@ -1,0 +1,1 @@
+ALTER TABLE public.dispatch_settings ADD COLUMN IF NOT EXISTS concat_messages BOOLEAN NOT NULL DEFAULT true;

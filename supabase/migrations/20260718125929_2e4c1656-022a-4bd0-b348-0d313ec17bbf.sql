@@ -1,0 +1,1 @@
+UPDATE public.automation_settings SET run_linkedin = true WHERE enabled = true AND run_linkedin = false AND coalesce(array_length(linkedin_search_terms,1),0) > 0;

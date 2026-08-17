@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://jctfjyzqtlqehnapkjpc.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "leadsbooster-mcp",
+      "version": "0.1.0",
+      "title": "LeadsBooster"
+    },
+    "tools": [
+      {
+        "name": "search_leads",
+        "title": "Search Google Maps leads",
+        "description": "Search leads captured from Google Maps for the signed-in user. Optional text filter matches company name, address or specialties.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Text to match against company name/address/specialties."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Max rows (default 25)."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_linkedin_contacts",
+        "title": "Search LinkedIn contacts",
+        "description": "Search LinkedIn contacts prospected by the signed-in user. Optional filter matches name, position or company.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Text to match against name/cargo/empresa."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Max rows (default 25)."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_instagram_contacts",
+        "title": "Search Instagram contacts",
+        "description": "Search Instagram contacts prospected by the signed-in user. Optional filter matches @username, name or bio.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Text to match against username/nome/bio."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "Max rows (default 25)."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_pipeline_cards",
+        "title": "List pipeline CRM cards",
+        "description": "List CRM pipeline cards for the signed-in user, optionally filtered by stage.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "estagio": {
+              "type": "string",
+              "description": "Pipeline stage to filter by."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "description": "Max rows (default 50)."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "create_pipeline_card",
+        "title": "Create pipeline CRM card",
+        "description": "Create a new CRM pipeline card for the signed-in user. Use this to move a lead into the sales pipeline.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "idempotentHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "nome_empresa": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Company name."
+            },
+            "contato": {
+              "type": "string",
+              "description": "Contact person name."
+            },
+            "telefone": {
+              "type": "string",
+              "description": "Phone/WhatsApp."
+            },
+            "email": {
+              "type": "string",
+              "description": "Contact email."
+            },
+            "estagio": {
+              "type": "string",
+              "description": "Pipeline stage (default: first stage of the board)."
+            },
+            "origem": {
+              "type": "string",
+              "description": "Where the lead came from (e.g. 'maps', 'linkedin', 'instagram')."
+            },
+            "valor_estimado": {
+              "type": "number",
+              "description": "Estimated deal value."
+            },
+            "observacoes": {
+              "type": "string",
+              "description": "Internal notes."
+            }
+          },
+          "required": [
+            "nome_empresa"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

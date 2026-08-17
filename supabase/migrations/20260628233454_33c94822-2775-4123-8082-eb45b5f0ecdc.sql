@@ -1,0 +1,1 @@
+ALTER TABLE public.social_reference_pages ADD COLUMN IF NOT EXISTS brand_data jsonb DEFAULT '{}'::jsonb;

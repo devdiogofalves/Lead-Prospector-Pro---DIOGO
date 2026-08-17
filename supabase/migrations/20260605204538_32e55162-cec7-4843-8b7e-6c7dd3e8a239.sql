@@ -1,0 +1,1 @@
+UPDATE auth.users SET raw_user_meta_data = COALESCE(raw_user_meta_data, '{}'::jsonb) || jsonb_build_object('is_admin', true) WHERE email = 'nucleodameta@gmail.com';

@@ -1,0 +1,1 @@
+ALTER VIEW public.leads_unified SET (security_invoker = true);

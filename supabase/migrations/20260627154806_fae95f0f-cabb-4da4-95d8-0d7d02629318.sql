@@ -1,0 +1,1 @@
+DELETE FROM public.whatsapp_group_leads WHERE member_jid LIKE '%@lid' OR length(regexp_replace(coalesce(phone,''), '\D', '', 'g')) NOT BETWEEN 10 AND 15;

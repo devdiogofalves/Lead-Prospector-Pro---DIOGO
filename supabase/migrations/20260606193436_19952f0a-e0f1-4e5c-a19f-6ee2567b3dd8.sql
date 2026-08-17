@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.claim_dispatch_item(uuid) FROM PUBLIC, anon, authenticated;

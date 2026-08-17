@@ -1,0 +1,2 @@
+ALTER TABLE public.linkedin_contacts DROP CONSTRAINT IF EXISTS linkedin_contacts_linkedin_url_key;
+ALTER TABLE public.linkedin_contacts ADD CONSTRAINT linkedin_contacts_user_url_unique UNIQUE (user_id, linkedin_url);

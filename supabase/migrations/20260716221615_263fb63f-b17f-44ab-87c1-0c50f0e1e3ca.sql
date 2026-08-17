@@ -1,0 +1,1 @@
+ALTER TABLE public.qualification_settings ADD COLUMN IF NOT EXISTS fixed_image_url text; ALTER TABLE public.qualification_settings ADD COLUMN IF NOT EXISTS fixed_image_caption text;
